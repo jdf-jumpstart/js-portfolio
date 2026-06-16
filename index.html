@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JumpStart Select Portfolio</title>
+<meta name="description" content="A curated selection of JumpStart's client work — brand, content, and digital strategy for growing healthcare practices.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:           #FDFBF7;
+  --surface:      #FFFFFF;
+  --surface-2:    #F5F2EC;
+  --surface-3:    #EDEAE3;
+
+  --border-faint: rgba(0,0,0,0.06);
+  --border-soft:  rgba(0,0,0,0.10);
+  --border-mid:   rgba(0,0,0,0.16);
+
+  --ink-1:  #0F0E0C;
+  --ink-2:  #4A4742;
+  --ink-3:  #8C8880;
+  --ink-4:  #B8B4AE;
+
+  --accent:       #1A1A18;
+  --accent-warm:  #5C4A2A;
+
+  --sans:  'Geist', 'Helvetica Neue', sans-serif;
+  --serif: 'Instrument Serif', Georgia, serif;
+
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  font-family: var(--sans);
+  color: var(--ink-1);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* ── FLOATING PILL NAV ── */
+.nav-wrap {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  width: max-content;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  background: rgba(253,251,247,0.86);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-soft);
+  border-radius: 9999px;
+  padding: 6px 6px 6px 20px;
+  gap: 24px;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.nav-brand {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-1);
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--sans);
+  color: var(--surface);
+  background: var(--ink-1);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s var(--ease-out), transform 0.15s var(--ease-spring);
+}
+.nav-cta:hover  { background: #2a2a28; }
+.nav-cta:active { transform: scale(0.97); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 120px 72px 96px;
+  position: relative;
+  border-bottom: 1px solid var(--border-faint);
+  overflow: hidden;
+}
+
+.hero-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border-faint) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-faint) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black 0%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--border-soft);
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--ink-3);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 36px;
+  width: fit-content;
+}
+
+.hero-eyebrow-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--ink-4);
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(52px, 7.5vw, 96px);
+  line-height: 1.01;
+  letter-spacing: -0.03em;
+  color: var(--ink-1);
+  margin-bottom: 40px;
+  max-width: 800px;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--ink-2);
+}
+
+.hero-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.hero-body {
+  font-size: 16px;
+  color: var(--ink-2);
+  line-height: 1.78;
+  max-width: 480px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--sans);
+  color: var(--surface);
+  background: var(--ink-1);
+  border: none;
+  padding: 13px 10px 13px 24px;
+  border-radius: 9999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s var(--ease-out), transform 0.15s var(--ease-spring);
+}
+.btn-primary:hover  { background: #2a2a28; }
+.btn-primary:active { transform: scale(0.97); }
+
+.btn-icon {
+  width: 34px; height: 34px;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.15);
+  display: flex; align-items: center; justify-content: center;
+  margin-left: 12px;
+  font-size: 15px;
+  transition: transform 0.2s var(--ease-spring);
+}
+.btn-primary:hover .btn-icon { transform: translate(2px,-1px) scale(1.08); }
+
+.btn-ghost {
+  font-size: 13px;
+  color: var(--ink-2);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-mid);
+  padding-bottom: 1px;
+  transition: color 0.18s, border-color 0.18s;
+}
+.btn-ghost:hover { color: var(--ink-1); border-color: var(--ink-1); }
+
+/* ── DIVIDER ── */
+.divider {
+  height: 1px;
+  background: var(--border-faint);
+}
+
+/* ── MARQUEE ── */
+.marquee-wrap {
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-faint);
+  padding: 18px 0;
+  background: var(--surface-2);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 0;
+  animation: marquee 28s linear infinite;
+  width: max-content;
+}
+
+.marquee-track:hover { animation-play-state: paused; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 40px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-3);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+.marquee-sep {
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: var(--ink-4);
+  flex-shrink: 0;
+}
+
+/* ── SECTION SHELL ── */
+.section {
+  padding: 96px 72px;
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 56px;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.section-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--ink-4);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(32px, 3.5vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--ink-1);
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--ink-2);
+}
+
+/* ── WORK GRID ── */
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+
+.work-card {
+  position: relative;
+  background: var(--surface);
+  border-radius: 0;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s var(--ease-spring);
+  min-height: 480px;
+}
+
+.work-card:first-child { border-radius: 24px 0 0 24px; }
+.work-card:last-child  { border-radius: 0 24px 24px 0; }
+.work-card:only-child  { border-radius: 24px; }
+
+.work-card-visual {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.work-card-bg {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.work-card:hover .work-card-bg { transform: scale(1.03); }
+
+/* Social Media card bg */
+.wc-social .work-card-bg {
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 30%, rgba(24,119,242,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 30% 70%, rgba(193,53,132,0.10) 0%, transparent 70%),
+    linear-gradient(135deg, #F5F2EC 0%, #EDEAE3 100%);
+}
+
+/* Website Redesign card bg */
+.wc-web .work-card-bg {
+  background:
+    radial-gradient(ellipse 70% 60% at 30% 40%, rgba(61,74,40,0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 80% 70%, rgba(212,175,150,0.20) 0%, transparent 70%),
+    linear-gradient(135deg, #f0ece4 0%, #e8e2d8 100%);
+}
+
+.work-card-preview {
+  position: absolute;
+  inset: 24px 24px 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+  overflow: hidden;
+}
+
+/* Social media preview — stacked post cards */
+.wc-social .post-card {
+  width: 120px;
+  flex-shrink: 0;
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 2px 4px rgba(0,0,0,0.06);
+  overflow: hidden;
+  transform: translateY(24px);
+  transition: transform 0.5s var(--ease-out);
+}
+.work-card:hover .wc-social .post-card { transform: translateY(8px); }
+
+.post-card-img {
+  height: 80px;
+  background: var(--surface-2);
+}
+
+.post-card-img.li { background: linear-gradient(135deg, #0A66C2 0%, #1e90ff 100%); }
+.post-card-img.fb { background: linear-gradient(135deg, #1877F2 0%, #42aaff 100%); }
+.post-card-img.ig { background: linear-gradient(135deg, #F58529 0%, #C13584 60%, #833AB4 100%); }
+
+.post-card-body {
+  padding: 10px 12px 14px;
+}
+
+.post-card-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.post-card-line {
+  height: 5px;
+  border-radius: 9999px;
+  background: var(--surface-3);
+}
+.post-card-line.w-full { width: 100%; }
+.post-card-line.w-3q   { width: 75%; }
+.post-card-line.w-half { width: 50%; }
+
+/* Web redesign preview — browser chrome mockup */
+.browser-mock {
+  width: calc(100% - 0px);
+  background: var(--surface);
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 -8px 40px rgba(0,0,0,0.10), 0 -2px 8px rgba(0,0,0,0.06);
+  overflow: hidden;
+  transform: translateY(20px);
+  transition: transform 0.5s var(--ease-out);
+}
+.work-card:hover .browser-mock { transform: translateY(6px); }
+
+.browser-bar {
+  height: 32px;
+  background: #F0EDE6;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 14px;
+  border-bottom: 1px solid var(--border-faint);
+}
+
+.browser-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+}
+.browser-dot.red    { background: #FF5F57; }
+.browser-dot.yellow { background: #FFBD2E; }
+.browser-dot.green  { background: #28C840; }
+
+.browser-url {
+  flex: 1;
+  height: 16px;
+  background: rgba(0,0,0,0.06);
+  border-radius: 9999px;
+  margin: 0 12px;
+}
+
+.browser-content {
+  height: 200px;
+  background: linear-gradient(160deg, #f6f2eb 0%, #3d4a28 60%);
+  position: relative;
+  overflow: hidden;
+}
+
+.browser-hero-bar {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  right: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bh-line {
+  height: 6px;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.28);
+}
+.bh-line.lg { width: 60%; }
+.bh-line.md { width: 40%; }
+.bh-line.sm { width: 25%; }
+
+.work-card-info {
+  padding: 28px 32px 32px;
+  border-top: 1px solid var(--border-faint);
+}
+
+.work-card-tags {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.tag-neutral { background: #EDEBE6; color: #3D3830; }
+.tag-blue    { background: #E0EFFD; color: #1A5C95; }
+.tag-green   { background: #E6F2E4; color: #29592B; }
+.tag-amber   { background: #FAF1D6; color: #785000; }
+
+.work-card-title {
+  font-family: var(--serif);
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink-1);
+  margin-bottom: 8px;
+}
+
+.work-card-desc {
+  font-size: 14px;
+  color: var(--ink-3);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.work-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-2);
+  transition: color 0.18s, gap 0.2s var(--ease-spring);
+}
+
+.work-card-cta svg {
+  transition: transform 0.2s var(--ease-spring);
+}
+
+.work-card:hover .work-card-cta { color: var(--ink-1); gap: 10px; }
+.work-card:hover .work-card-cta svg { transform: translate(2px, -1px); }
+
+/* ── ABOUT STRIP ── */
+.about-strip {
+  padding: 96px 72px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  border-top: 1px solid var(--border-faint);
+}
+
+.about-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--ink-4);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 20px;
+}
+
+.about-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--ink-1);
+  margin-bottom: 24px;
+}
+
+.about-title em {
+  font-style: italic;
+  color: var(--ink-2);
+}
+
+.about-body {
+  font-size: 15px;
+  color: var(--ink-2);
+  line-height: 1.8;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+
+.about-stat {
+  background: var(--surface);
+  border: 1px solid var(--border-faint);
+  border-radius: 4px;
+  padding: 28px 28px 24px;
+}
+
+.about-stat:first-child { border-radius: 20px 4px 4px 4px; }
+.about-stat:nth-child(2){ border-radius: 4px 20px 4px 4px; }
+.about-stat:nth-child(3){ border-radius: 4px 4px 4px 20px; }
+.about-stat:last-child  { border-radius: 4px 4px 20px 4px; }
+
+.stat-num {
+  font-family: var(--sans);
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: var(--ink-1);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--ink-3);
+  line-height: 1.5;
+}
+
+/* ── CTA BAND ── */
+.cta-band {
+  padding: 96px 72px;
+  background: var(--ink-1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+}
+
+.cta-band-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-band-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 24px;
+}
+
+.cta-band-title {
+  font-family: var(--serif);
+  font-size: clamp(36px, 4.5vw, 56px);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  color: #FDFBF7;
+  margin-bottom: 20px;
+}
+
+.cta-band-title em {
+  font-style: italic;
+  color: rgba(253,251,247,0.6);
+}
+
+.cta-band-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.btn-light {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--sans);
+  color: var(--ink-1);
+  background: #FDFBF7;
+  border: none;
+  padding: 13px 10px 13px 24px;
+  border-radius: 9999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s var(--ease-out), transform 0.15s var(--ease-spring);
+}
+.btn-light:hover  { background: #FFFFFF; }
+.btn-light:active { transform: scale(0.97); }
+
+.btn-light .btn-icon {
+  background: rgba(0,0,0,0.08);
+}
+
+/* ── FOOTER ── */
+.footer {
+  padding: 40px 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 1px solid var(--border-faint);
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-2);
+  text-decoration: none;
+}
+
+.footer-meta {
+  font-size: 12px;
+  color: var(--ink-4);
+}
+
+.footer-link {
+  font-size: 12px;
+  color: var(--ink-3);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+.footer-link:hover { color: var(--ink-1); }
+
+/* ── SCROLL REVEALS ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s var(--ease-out), transform 0.65s var(--ease-out);
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: none;
+}
+.reveal-d1 { transition-delay: 0.08s; }
+.reveal-d2 { transition-delay: 0.16s; }
+.reveal-d3 { transition-delay: 0.24s; }
+.reveal-d4 { transition-delay: 0.32s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero { padding: 100px 32px 72px; }
+  .hero-title { font-size: clamp(44px, 10vw, 72px); }
+  .hero-bottom { flex-direction: column; align-items: flex-start; }
+
+  .marquee-item { padding: 0 24px; }
+
+  .section { padding: 72px 32px; }
+
+  .work-grid { grid-template-columns: 1fr; gap: 3px; }
+  .work-card:first-child { border-radius: 24px 24px 0 0; }
+  .work-card:last-child  { border-radius: 0 0 24px 24px; }
+
+  .about-strip { grid-template-columns: 1fr; gap: 48px; padding: 72px 32px; }
+
+  .cta-band { padding: 72px 32px; }
+
+  .footer { padding: 32px; flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav-wrap">
+  <nav class="nav" aria-label="Primary navigation">
+    <a href="/" class="nav-brand">JumpStart</a>
+    <a href="mailto:team@itsjumpstart.com" class="nav-cta">Get in touch</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-grid" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow reveal">
+      <span class="hero-eyebrow-dot"></span>
+      Select Portfolio · 2024–2025
+    </div>
+    <h1 class="hero-title reveal reveal-d1">
+      Work that moves<br><em>practices forward.</em>
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-body reveal reveal-d2">
+        JumpStart partners with healthcare practices to build brands people trust,
+        content that converts, and digital experiences that reflect the quality of
+        your care. Here's a curated look at what we've made together.
+      </p>
+      <div class="hero-actions reveal reveal-d3">
+        <a href="#work" class="btn-primary">
+          View the work
+          <span class="btn-icon" aria-hidden="true">↓</span>
+        </a>
+        <a href="mailto:team@itsjumpstart.com" class="btn-ghost">Start a project</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <!-- duplicated for seamless loop -->
+    <span class="marquee-item">Social Media <span class="marquee-sep"></span></span>
+    <span class="marquee-item">Brand Strategy <span class="marquee-sep"></span></span>
+    <span class="marquee-item">Content Creation <span class="marquee-sep"></span></span>
+    <span class="marquee-item">Website Design <span class="marquee-sep"></span></span>
+    <span class="marquee-item">Healthcare Marketing <span class="marquee-sep"></span></span>
+    <span class="marquee-item">Patient Growth <span class="marquee-sep"></span></span>
+    <span class="marquee-item">Direct Primary Care <span class="marquee-sep"></span></span>
+    <span class="marquee-item">Photography <span class="marquee-sep"></span></span>
+    <span class="marquee-item">Social Media <span class="marquee-sep"></span></span>
+    <span class="marquee-item">Brand Strategy <span class="marquee-sep"></span></span>
+    <span class="marquee-item">Content Creation <span class="marquee-sep"></span></span>
+    <span class="marquee-item">Website Design <span class="marquee-sep"></span></span>
+    <span class="marquee-item">Healthcare Marketing <span class="marquee-sep"></span></span>
+    <span class="marquee-item">Patient Growth <span class="marquee-sep"></span></span>
+    <span class="marquee-item">Direct Primary Care <span class="marquee-sep"></span></span>
+    <span class="marquee-item">Photography <span class="marquee-sep"></span></span>
+  </div>
+</div>
+
+<!-- WORK -->
+<section class="section" id="work">
+  <div class="section-header">
+    <div>
+      <p class="section-label">Selected Work</p>
+      <h2 class="section-title">Projects that <em>speak for themselves.</em></h2>
+    </div>
+  </div>
+
+  <div class="work-grid">
+
+    <!-- Card 1: Social Media Portfolio -->
+    <a href="jumpstart-portfolio.html" class="work-card wc-social reveal">
+      <div class="work-card-visual">
+        <div class="work-card-bg"></div>
+        <div class="work-card-preview" aria-hidden="true">
+          <div class="post-card" style="transform:translateY(40px) rotate(-2deg)">
+            <div class="post-card-img li"></div>
+            <div class="post-card-body">
+              <div class="post-card-lines">
+                <div class="post-card-line w-full"></div>
+                <div class="post-card-line w-3q"></div>
+                <div class="post-card-line w-half"></div>
+              </div>
+            </div>
+          </div>
+          <div class="post-card" style="transform:translateY(16px)">
+            <div class="post-card-img ig"></div>
+            <div class="post-card-body">
+              <div class="post-card-lines">
+                <div class="post-card-line w-full"></div>
+                <div class="post-card-line w-3q"></div>
+                <div class="post-card-line w-half"></div>
+              </div>
+            </div>
+          </div>
+          <div class="post-card" style="transform:translateY(32px) rotate(2deg)">
+            <div class="post-card-img fb"></div>
+            <div class="post-card-body">
+              <div class="post-card-lines">
+                <div class="post-card-line w-full"></div>
+                <div class="post-card-line w-3q"></div>
+                <div class="post-card-line w-half"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="work-card-info">
+        <div class="work-card-tags">
+          <span class="tag tag-blue">Social Media</span>
+          <span class="tag tag-neutral">Content Strategy</span>
+          <span class="tag tag-amber">DPC</span>
+        </div>
+        <h3 class="work-card-title">JumpStart DPC Solutions<br>Social Media Portfolio</h3>
+        <p class="work-card-desc">Platform-native content across LinkedIn, Facebook, and Instagram — built to educate, build trust, and convert followers into patients.</p>
+        <span class="work-card-cta">
+          View case study
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+            <path d="M2.5 10.5L10.5 2.5M10.5 2.5H4.5M10.5 2.5V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+
+    <!-- Card 2: Website Redesign -->
+    <a href="website-redesign.html" class="work-card wc-web reveal reveal-d2">
+      <div class="work-card-visual">
+        <div class="work-card-bg"></div>
+        <div class="work-card-preview" aria-hidden="true">
+          <div class="browser-mock">
+            <div class="browser-bar">
+              <div class="browser-dot red"></div>
+              <div class="browser-dot yellow"></div>
+              <div class="browser-dot green"></div>
+              <div class="browser-url"></div>
+            </div>
+            <div class="browser-content">
+              <div class="browser-hero-bar">
+                <div class="bh-line lg"></div>
+                <div class="bh-line md"></div>
+                <div class="bh-line sm"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="work-card-info">
+        <div class="work-card-tags">
+          <span class="tag tag-green">Website Redesign</span>
+          <span class="tag tag-neutral">UX Design</span>
+          <span class="tag tag-neutral">Case Study</span>
+        </div>
+        <h3 class="work-card-title">Evolve Gynecology<br>Website Redesign</h3>
+        <p class="work-card-desc">A ground-up website redesign for a specialty gynecology practice — blending a luxury editorial aesthetic with clear conversion pathways.</p>
+        <span class="work-card-cta">
+          View case study
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+            <path d="M2.5 10.5L10.5 2.5M10.5 2.5H4.5M10.5 2.5V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<div class="about-strip">
+  <div class="reveal">
+    <p class="about-label">About JumpStart</p>
+    <h2 class="about-title">Marketing built for <em>the way medicine should work.</em></h2>
+    <p class="about-body">
+      We specialize in growing independent and direct primary care practices — the ones putting the patient relationship first. From brand foundations to ongoing social presence, we handle the marketing so you can focus on medicine.
+    </p>
+  </div>
+  <div class="about-stats reveal reveal-d2">
+    <div class="about-stat">
+      <div class="stat-num">50+</div>
+      <div class="stat-label">Projects delivered</div>
+    </div>
+    <div class="about-stat">
+      <div class="stat-num">DPC</div>
+      <div class="stat-label">Specialty focus</div>
+    </div>
+    <div class="about-stat">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Channels managed per client</div>
+    </div>
+    <div class="about-stat">
+      <div class="stat-num">↑</div>
+      <div class="stat-label">Patient growth, every time</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="cta-band-inner reveal">
+    <p class="cta-band-label">Let's work together</p>
+    <h2 class="cta-band-title">Ready to grow your <em>practice?</em></h2>
+    <p class="cta-band-sub">
+      Tell us about your practice and what you're trying to build.
+      We'll take it from there.
+    </p>
+    <a href="mailto:team@itsjumpstart.com" class="btn-light">
+      Get in touch
+      <span class="btn-icon" aria-hidden="true">→</span>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <a href="/" class="footer-brand">JumpStart</a>
+  <span class="footer-meta">© 2025 JumpStart. Select Portfolio.</span>
+  <a href="mailto:team@itsjumpstart.com" class="footer-link">team@itsjumpstart.com</a>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); } });
+}, { threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
