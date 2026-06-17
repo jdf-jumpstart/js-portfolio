@@ -410,7 +410,6 @@ body::after {
 }
 
 .graphic-pane {
-  height: 560px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -428,8 +427,6 @@ body::after {
 
 .graphic-inner {
   width: 100%;
-  height: 100%;
-  min-height: 560px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -439,11 +436,7 @@ body::after {
 
 .graphic-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  position: absolute;
-  inset: 0;
+  height: auto;
   display: block;
 }
 
@@ -642,8 +635,8 @@ body::after {
 
   .post-block { grid-template-columns: 1fr; }
     .posts-stack { grid-template-columns: 1fr; }
-  .graphic-pane { min-height: 320px; height: 320px; }
-  .graphic-inner { min-height: 320px; }
+  .graphic-pane { min-height: 0; }
+  .graphic-inner { min-height: 0; }
 
   .del-grid { grid-template-columns: 1fr; }
 
