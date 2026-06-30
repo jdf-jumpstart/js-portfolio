@@ -7,7 +7,7 @@
 <meta name="description" content="A curated selection of JumpStart's client work — brand, content, and digital strategy for growing healthcare practices.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 h1, h2, h3, h4, h5, h6 { font-weight: normal; }
@@ -30,8 +30,9 @@ h1, h2, h3, h4, h5, h6 { font-weight: normal; }
   --accent:       #1A1A18;
   --accent-warm:  #5C4A2A;
 
-  --sans:  'Geist', 'Helvetica Neue', sans-serif;
-  --serif: 'Instrument Serif', Georgia, serif;
+  --sans:    'Geist', 'Helvetica Neue', sans-serif;
+  --serif:   'Instrument Serif', Georgia, serif;
+  --display: 'Montserrat', 'Geist', 'Helvetica Neue', sans-serif;
 
   --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
@@ -165,10 +166,11 @@ body::after {
 }
 
 .hero-title {
-  font-family: var(--serif);
-  font-size: clamp(52px, 7.5vw, 96px);
-  line-height: 1.01;
-  letter-spacing: -0.03em;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(48px, 6.8vw, 86px);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
   color: var(--ink-1);
   margin-bottom: 40px;
   max-width: 800px;
@@ -176,6 +178,7 @@ body::after {
 
 .hero-title em {
   font-style: italic;
+  font-weight: 600;
   color: var(--ink-2);
 }
 
