@@ -7,7 +7,7 @@
 <meta name="description" content="A curated selection of JumpStart's client work — brand, content, and digital strategy for growing healthcare practices.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Josefin+Sans:ital,wght@0,300;0,400;0,600;1,300&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 h1, h2, h3, h4, h5, h6 { font-weight: normal; }
@@ -85,7 +85,7 @@ body::after {
 }
 
 .nav-brand {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--ink-1);
   text-decoration: none;
@@ -96,7 +96,7 @@ body::after {
 .nav-cta {
   display: inline-flex;
   align-items: center;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   font-family: var(--sans);
   color: var(--surface);
@@ -141,29 +141,6 @@ body::after {
   max-width: 1100px;
 }
 
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 5px 14px;
-  background: var(--surface-2);
-  border: 1px solid var(--border-soft);
-  border-radius: 9999px;
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--ink-3);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  margin-bottom: 36px;
-  width: fit-content;
-}
-
-.hero-eyebrow-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--ink-4);
-}
 
 .hero-title {
   font-family: var(--display);
@@ -176,11 +153,6 @@ body::after {
   max-width: 800px;
 }
 
-.hero-title em {
-  font-style: italic;
-  font-weight: 600;
-  color: var(--ink-2);
-}
 
 .hero-bottom {
   display: flex;
@@ -207,7 +179,7 @@ body::after {
 .btn-primary {
   display: inline-flex;
   align-items: center;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   font-family: var(--sans);
   color: var(--surface);
@@ -234,7 +206,7 @@ body::after {
 .btn-primary:hover .btn-icon { transform: translate(2px,-1px) scale(1.08); }
 
 .btn-ghost {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--ink-2);
   text-decoration: none;
   border-bottom: 1px solid var(--border-mid);
@@ -276,7 +248,7 @@ body::after {
   align-items: center;
   gap: 10px;
   padding: 0 40px;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--ink-3);
   text-transform: uppercase;
@@ -305,26 +277,12 @@ body::after {
   flex-wrap: wrap;
 }
 
-.section-label {
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--ink-4);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  margin-bottom: 12px;
-}
-
 .section-title {
   font-family: var(--serif);
   font-size: clamp(32px, 3.5vw, 44px);
   line-height: 1.1;
   letter-spacing: -0.025em;
   color: var(--ink-1);
-}
-
-.section-title em {
-  font-style: italic;
-  color: var(--ink-2);
 }
 
 /* ── WORK GRID ── */
@@ -510,9 +468,9 @@ body::after {
 }
 
 .tag {
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 600;
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: 9999px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -533,7 +491,7 @@ body::after {
 }
 
 .work-card-desc {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--ink-3);
   line-height: 1.65;
   margin-bottom: 20px;
@@ -543,10 +501,10 @@ body::after {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--ink-2);
-  transition: color 0.18s, gap 0.2s var(--ease-spring);
+  transition: color 0.18s;
 }
 
 .work-card-cta svg {
@@ -566,15 +524,6 @@ body::after {
   border-top: 1px solid var(--border-faint);
 }
 
-.about-label {
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--ink-4);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  margin-bottom: 20px;
-}
-
 .about-title {
   font-family: var(--serif);
   font-size: clamp(28px, 3vw, 40px);
@@ -582,11 +531,6 @@ body::after {
   letter-spacing: -0.025em;
   color: var(--ink-1);
   margin-bottom: 24px;
-}
-
-.about-title em {
-  font-style: italic;
-  color: var(--ink-2);
 }
 
 .about-body {
@@ -624,7 +568,7 @@ body::after {
 }
 
 .stat-label {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--ink-3);
   line-height: 1.5;
 }
@@ -656,15 +600,6 @@ body::after {
   margin: 0 auto;
 }
 
-.cta-band-label {
-  font-size: 10px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.35);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  margin-bottom: 24px;
-}
-
 .cta-band-title {
   font-family: var(--serif);
   font-size: clamp(36px, 4.5vw, 56px);
@@ -672,11 +607,6 @@ body::after {
   letter-spacing: -0.03em;
   color: #FDFBF7;
   margin-bottom: 20px;
-}
-
-.cta-band-title em {
-  font-style: italic;
-  color: rgba(253,251,247,0.6);
 }
 
 .cta-band-sub {
@@ -689,7 +619,7 @@ body::after {
 .btn-light {
   display: inline-flex;
   align-items: center;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   font-family: var(--sans);
   color: var(--ink-1);
@@ -720,19 +650,19 @@ body::after {
 }
 
 .footer-brand {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--ink-2);
   text-decoration: none;
 }
 
 .footer-meta {
-  font-size: 12px;
+  font-size: 15px;
   color: var(--ink-4);
 }
 
 .footer-link {
-  font-size: 12px;
+  font-size: 15px;
   color: var(--ink-3);
   text-decoration: none;
   transition: color 0.18s;
@@ -862,7 +792,6 @@ body::after {
 <section class="section" id="work">
   <div class="section-header">
     <div>
-      <p class="section-label">Selected Work</p>
       <h2 class="section-title">The work.</h2>
     </div>
   </div>
@@ -968,7 +897,6 @@ body::after {
 <!-- ABOUT STRIP -->
 <div class="about-strip">
   <div class="reveal">
-    <p class="about-label">About JumpStart</p>
     <h2 class="about-title">Marketing built for the way medicine should work.</h2>
     <p class="about-body">
       We work with independent and direct primary care practices. The ones that left insurance behind. Brand foundations, social content, website design: we handle it. You focus on medicine.
@@ -997,7 +925,6 @@ body::after {
 <!-- CTA BAND -->
 <div class="cta-band">
   <div class="cta-band-inner reveal">
-    <p class="cta-band-label">Let's work together</p>
     <h2 class="cta-band-title">Your patients are already looking.</h2>
     <p class="cta-band-sub">
       Tell us about your practice and what you're trying to build.
