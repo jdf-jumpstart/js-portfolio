@@ -87,7 +87,6 @@ body{font-family:var(--sans);background:var(--warm-white);color:var(--ink);font-
 
 /* Floating nav pill — backdrop-blur ONLY on this fixed element */
 .nav-pill{position:fixed;top:24px;left:50%;transform:translateX(-50%);z-index:100;display:flex;align-items:center;gap:24px;background:rgba(253,251,247,0.88);border:1px solid rgba(0,0,0,0.10);border-radius:9999px;padding:6px 6px 6px 20px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 2px 24px rgba(0,0,0,0.07),0 1px 2px rgba(0,0,0,0.04);white-space:nowrap}
-.nav-brand{font-size:16px;font-weight:600;color:#0F0E0C;text-decoration:none;letter-spacing:-0.01em}
 .nav-meta{font-size:16px;color:rgba(0,0,0,0.42);font-weight:400}
 .nav-cta{display:inline-flex;align-items:center;gap:6px;background:#0F0E0C;color:#FDFBF7;font-size:16px;font-weight:600;font-family:var(--sans);text-decoration:none;padding:8px 16px;border-radius:9999px;transition:background 0.2s,transform 0.15s}
 .nav-cta:hover{background:#2a2a28;transform:scale(1.02)}
@@ -310,8 +309,8 @@ footer{background:var(--warm-white);border-top:1px solid var(--rule);padding:32p
   .comp-n{font-size:52px}
 }
 .si{display:inline-block;width:1em;height:1em;vertical-align:-0.1em;flex-shrink:0}
-.nav-back{font-size:15px;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s;white-space:nowrap}
-.nav-back:hover{color:rgba(255,255,255,0.9)}
+.nav-back{font-size:15px;color:rgba(0,0,0,0.55);text-decoration:none;transition:color 0.2s;white-space:nowrap}
+.nav-back:hover{color:rgba(0,0,0,0.9)}
 </style>
 </head>
 <body>
@@ -339,9 +338,8 @@ footer{background:var(--warm-white);border-top:1px solid var(--rule);padding:32p
 <!-- FLOATING NAV PILL -->
 <nav class="nav-pill">
   <a class="nav-back" href="index.html">← Portfolio</a>
-  <a class="nav-brand" href="https://itsjumpstart.com">JumpStart</a>
   <span class="nav-meta">Case Study · Full-Service Marketing</span>
-  <a class="nav-cta" href="https://www.itsjumpstart.com/contact-us">Get in touch</a>
+  <a class="nav-cta" href="https://itsjumpstart.com/contact-us">Get in touch</a>
 </nav>
 
 <!-- HERO -->
