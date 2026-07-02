@@ -288,14 +288,14 @@ body::after {
 /* ── WORK GRID ── */
 .work-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3px;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 24px;
 }
 
 .work-card {
   position: relative;
   background: var(--surface);
-  border-radius: 0;
+  border-radius: 24px;
   overflow: hidden;
   text-decoration: none;
   color: inherit;
@@ -303,11 +303,8 @@ body::after {
   flex-direction: column;
   transition: transform 0.4s var(--ease-spring);
   min-height: 480px;
+  border: 1px solid var(--border-faint);
 }
-
-.work-card:first-child { border-radius: 24px 0 0 24px; }
-.work-card:last-child  { border-radius: 0 24px 24px 0; }
-.work-card:only-child  { border-radius: 24px; }
 
 .work-card-visual {
   flex: 1;
@@ -338,6 +335,15 @@ body::after {
     radial-gradient(ellipse 70% 60% at 30% 40%, rgba(61,74,40,0.18) 0%, transparent 70%),
     radial-gradient(ellipse 50% 50% at 80% 70%, rgba(212,175,150,0.20) 0%, transparent 70%),
     linear-gradient(135deg, #f0ece4 0%, #e8e2d8 100%);
+}
+
+/* Brand Kits card bg */
+.wc-brand .work-card-bg {
+  background:
+    radial-gradient(ellipse 55% 50% at 20% 25%, rgba(26,47,77,0.16) 0%, transparent 70%),
+    radial-gradient(ellipse 55% 50% at 80% 30%, rgba(74,42,67,0.14) 0%, transparent 70%),
+    radial-gradient(ellipse 55% 55% at 50% 85%, rgba(77,92,76,0.16) 0%, transparent 70%),
+    linear-gradient(135deg, #F5F2EC 0%, #EDEAE3 100%);
 }
 
 .work-card-preview {
@@ -371,6 +377,10 @@ body::after {
 .post-card-img.li { background: linear-gradient(135deg, #0A66C2 0%, #1e90ff 100%); }
 .post-card-img.fb { background: linear-gradient(135deg, #1877F2 0%, #42aaff 100%); }
 .post-card-img.ig { background: linear-gradient(135deg, #F58529 0%, #C13584 60%, #833AB4 100%); }
+
+.post-card-img.kit-navy  { background: linear-gradient(135deg, #1A2F4D 0%, #1E3E69 100%); }
+.post-card-img.kit-plum  { background: linear-gradient(135deg, #4A2A43 0%, #6E4064 100%); }
+.post-card-img.kit-green { background: linear-gradient(135deg, #4D5C4C 0%, #6B7D69 100%); }
 
 .post-card-body {
   padding: 10px 12px 14px;
@@ -696,9 +706,7 @@ body::after {
 
   .section { padding: 72px 32px; }
 
-  .work-grid { grid-template-columns: 1fr; gap: 3px; }
-  .work-card:first-child { border-radius: 24px 24px 0 0; }
-  .work-card:last-child  { border-radius: 0 0 24px 24px; }
+  .work-grid { grid-template-columns: 1fr; gap: 20px; }
 
   .about-strip { grid-template-columns: 1fr; gap: 48px; padding: 72px 32px; }
 
@@ -884,6 +892,60 @@ body::after {
         <p class="work-card-desc">A ground-up redesign for a concierge gynecology practice in Las Vegas. The original site was contradicting the brand we'd spent a year building everywhere else.</p>
         <span class="work-card-cta">
           View case study
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+            <path d="M2.5 10.5L10.5 2.5M10.5 2.5H4.5M10.5 2.5V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </div>
+    </a>
+
+    <!-- Card 3: Brand Kits -->
+    <a href="brand-kits.html" class="work-card wc-brand reveal reveal-d3">
+      <div class="work-card-visual">
+        <div class="work-card-bg"></div>
+        <div class="work-card-preview" aria-hidden="true">
+          <div class="post-card" style="transform:translateY(40px) rotate(-2deg)">
+            <div class="post-card-img kit-navy"></div>
+            <div class="post-card-body">
+              <div class="post-card-lines">
+                <div class="post-card-line w-full"></div>
+                <div class="post-card-line w-3q"></div>
+                <div class="post-card-line w-half"></div>
+              </div>
+            </div>
+          </div>
+          <div class="post-card" style="transform:translateY(16px)">
+            <div class="post-card-img kit-plum"></div>
+            <div class="post-card-body">
+              <div class="post-card-lines">
+                <div class="post-card-line w-full"></div>
+                <div class="post-card-line w-3q"></div>
+                <div class="post-card-line w-half"></div>
+              </div>
+            </div>
+          </div>
+          <div class="post-card" style="transform:translateY(32px) rotate(2deg)">
+            <div class="post-card-img kit-green"></div>
+            <div class="post-card-body">
+              <div class="post-card-lines">
+                <div class="post-card-line w-full"></div>
+                <div class="post-card-line w-3q"></div>
+                <div class="post-card-line w-half"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="work-card-info">
+        <div class="work-card-tags">
+          <span class="tag tag-neutral">Brand Identity</span>
+          <span class="tag tag-blue">Logo Systems</span>
+          <span class="tag tag-amber">Brand Voice</span>
+        </div>
+        <h3 class="work-card-title">Brand Kits<br>Identity Systems</h3>
+        <p class="work-card-desc">Full brand systems for three DPC and concierge practices: palette, typography, logo lockups, and voice guidelines, built to hand straight to a designer or developer.</p>
+        <span class="work-card-cta">
+          View the kits
           <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
             <path d="M2.5 10.5L10.5 2.5M10.5 2.5H4.5M10.5 2.5V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
