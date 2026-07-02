@@ -261,15 +261,15 @@
   var tl = gsap.timeline({repeat:-1});
 
   /* ---------- Scene 1 hold ---------- */
-  tl.to({}, {duration:13.0});
+  tl.to({}, {duration:5.0});
 
   /* ---------- Transition 1 -> 2 : cream wipe, bottom to top ---------- */
   tl.set('#wipe', {backgroundColor:'#F9F5EF', transformOrigin:'bottom', scaleY:0, scaleX:1});
-  tl.to('#wipe', {scaleY:1, duration:1.0, ease:'power2.in'});
+  tl.to('#wipe', {scaleY:1, duration:0.4, ease:'power2.in'});
   tl.set('#scene1', {opacity:0});
   tl.set('#scene2', {opacity:1});
   tl.set('#wipe', {transformOrigin:'top'});
-  tl.to('#wipe', {scaleY:0, duration:1.0, ease:'power2.out'});
+  tl.to('#wipe', {scaleY:0, duration:0.4, ease:'power2.out'});
 
   /* ---------- Scene 2 choreography ---------- */
   tl.to('#pillar1', {opacity:1, y:0, duration:0.5, ease:'power2.out'});
@@ -293,11 +293,11 @@
 
   /* ---------- Transition 2 -> 3 : black wipe, left to right ---------- */
   tl.set('#wipe', {backgroundColor:'#1A1A1A', transformOrigin:'left', scaleX:0, scaleY:1});
-  tl.to('#wipe', {scaleX:1, duration:1.0, ease:'power2.in'});
+  tl.to('#wipe', {scaleX:1, duration:0.5, ease:'power2.in'});
   tl.set('#scene2', {opacity:0});
   tl.set('#scene3', {opacity:1});
   tl.set('#wipe', {transformOrigin:'right'});
-  tl.to('#wipe', {scaleX:0, duration:1.0, ease:'power2.out'});
+  tl.to('#wipe', {scaleX:0, duration:0.5, ease:'power2.out'});
 
   /* ---------- Scene 3 choreography ---------- */
   tl.fromTo('#proofPhrase', {opacity:0, scale:1.15}, {opacity:1, scale:1, duration:0.8, ease:'back.out(1.5)'});
@@ -305,11 +305,11 @@
   tl.to({}, {duration:10.8});
 
   /* ---------- Transition 3 -> 4 : typographic scale-morph ---------- */
-  tl.to('#proofPhrase', {scale:6, opacity:0, duration:1.1, ease:'power2.in'});
-  tl.to('#proofSupport', {opacity:0, duration:0.5}, '<');
+  tl.to('#proofPhrase', {scale:6, opacity:0, duration:0.6, ease:'power2.in'});
+  tl.to('#proofSupport', {opacity:0, duration:0.3}, '<');
   tl.set('#scene3', {opacity:0});
   tl.set('#scene4', {opacity:1});
-  tl.fromTo('#inviteHeadline', {opacity:0, scale:0.15}, {opacity:1, scale:1, duration:1.0, ease:'power3.out'});
+  tl.fromTo('#inviteHeadline', {opacity:0, scale:0.15}, {opacity:1, scale:1, duration:0.55, ease:'power3.out'});
 
   /* ---------- Scene 4 choreography ---------- */
   tl.to('#inviteMedium', {opacity:1, y:0, duration:0.5, ease:'power2.out'}, '+=0.2');
@@ -318,19 +318,19 @@
   tl.to({}, {duration:9.5});
 
   /* ---------- Transition 4 -> 5 : curtains close ---------- */
-  tl.to('#curtainOrange', {x:'0%', duration:0.9, ease:'power3.inOut'});
-  tl.to('#curtainForest', {x:'0%', duration:0.9, ease:'power3.inOut'}, '<');
+  tl.to('#curtainOrange', {x:'0%', duration:0.5, ease:'power3.inOut'});
+  tl.to('#curtainForest', {x:'0%', duration:0.5, ease:'power3.inOut'}, '<');
   tl.set('#scene4', {opacity:0});
-  tl.fromTo('#logo5', {opacity:0, scale:0.7}, {opacity:1, scale:1, duration:0.7, ease:'power2.out'});
+  tl.fromTo('#logo5', {opacity:0, scale:0.7}, {opacity:1, scale:1, duration:0.4, ease:'power2.out'});
 
   /* ---------- Scene 5 breath hold ---------- */
   tl.to({}, {duration:1.85});
 
   /* ---------- Transition 5 -> 1 : curtains open, loop restarts ---------- */
-  tl.to('#logo5', {opacity:0, scale:0.8, duration:0.5, ease:'power2.in'});
+  tl.to('#logo5', {opacity:0, scale:0.8, duration:0.3, ease:'power2.in'});
   tl.set('#scene1', {opacity:1});
-  tl.to('#curtainOrange', {x:'-100%', duration:0.9, ease:'power3.inOut'}, '+=0.05');
-  tl.to('#curtainForest', {x:'100%', duration:0.9, ease:'power3.inOut'}, '<');
+  tl.to('#curtainOrange', {x:'-100%', duration:0.5, ease:'power3.inOut'}, '+=0.03');
+  tl.to('#curtainForest', {x:'100%', duration:0.5, ease:'power3.inOut'}, '<');
 
   window.__tl = tl;
 
